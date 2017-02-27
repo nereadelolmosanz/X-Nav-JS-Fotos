@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style type="text/css" media="screen">
+      body{
+        padding:0;
+        margin:50px auto;
+        text-align:center;
+        font:100% Verdana;
+      }
+      h1 {
+        font-size: 1.5em;
+        color: #240B3B;
+      }
+      #link {
+        background-color: #A9D0F5;
+      }
+      #footer {
+        background-color: #A9A9F5;
+      }
+      footer {
+        font-size: 0.75em;
+      }
+    </style>
+    <title>Ejercicio 5.5.7</title>
+  </head>
+  <body>
+    <h1>Ejercicio 5.5.7 - Mostrador de fotos aleatorio</h1>
+    <p>Pincha <a id="link" href="javascript:newPhoto()">aquí</a> para ver una foto nueva.</p>
+    <span id="picture"></span>
+    <script type="text/javascript" charset="utf-8">
+      function newPhoto() {
+        var urlsList = [
+          'http://monteroespinosa.com/img/fotos/universidades/universidad-rey-juan-carlos-fuenlabrada.JPG',
+          'http://www.marioton.com/accesos/accesourjc_archivos/campusfuenla.jpg',
+          'http://www.methaodos.org/wp-content/uploads/2013/05/bibliofuen.jpg',
+          'https://campussocialurjc.files.wordpress.com/2013/11/546x400_universidad__132_.jpg',
+          'http://4.bp.blogspot.com/-Xe2WxcMN55Y/UPaWoengT-I/AAAAAAAAAKo/lOeTf-G36RI/s1600/IMG-20130116-WA0001.jpg',
+          'http://www.ucci.urjc.es/wp-content/uploads/Campus-de-Fuenlabrada-URJC-620x425.jpg'];
+        element = document.getElementById('picture');
+        var index =Math.round(Math.random()*(urlsList.length-1));
+        console.log(index);
+        photoURL = urlsList[index];
+        element.innerHTML = "<img src='" + photoURL + "'>";
+      }
+    </script>
+    <br><br><br>
+    <footer id="footer">
+      <p>Nerea Del Olmo Sanz</p>
+    </footer>
+  </body>
+</html>
